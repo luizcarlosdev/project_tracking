@@ -1,15 +1,24 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Barlow_Condensed } from "next/font/google";
 import { Barlow } from "next/font/google";
+
+import { useState } from "react";
+
 import Container from "@/components/container/Container";
 import Header from "@/components/header/Header";
 
 export default function Home() {
+  const [displayMenu, setDisplayMenu] = useState<boolean>(false);
+  const [changeIcon, setChangeIcon] = useState<boolean>(false)
   return (
     <>
       <Container>
-        <Header />
+        <Header setDisplayMenu={displayMenu} changeIcon={changeIcon} action={() => {
+          setChangeIcon(!changeIcon);
+          setDisplayMenu(!displayMenu);
+        }}/>
       </Container>
       <Container>
         <div className="background_image"></div>
@@ -20,7 +29,7 @@ export default function Home() {
                 <h4><span>new</span> monograph dashbord</h4>
                 <h1>powerful insights into your team</h1>
               </div>
-              <p>Project planning and time tracking<br/> for agile teams</p>
+              <p>Project planning and time tracking<br /> for agile teams</p>
             </div>
             <div className='sub_area'>
               <a href="#" className="sub_btn"><button>schedule a demo</button></a>
