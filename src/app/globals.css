@@ -16,8 +16,8 @@
 }
 
 body {
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  max-height: 100vh;
   background-color: #fefefe;
   overflow-x: hidden;
 }
@@ -141,15 +141,17 @@ section article .sub_area .sub_btn:hover {
 @media screen and (max-width: 768px) {
   section {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 20px;
   }
 
   section article {
-    height: 300px;
+    height: auto;
     order: 2;
     place-items: center;
     justify-content: center;
     gap: 30px;
+    padding: 0px 20px;
   }
 
   section article .introduction {
@@ -164,14 +166,20 @@ section article .sub_area .sub_btn:hover {
     font-size: 1.9rem;
   }
 
+  section article .sub_area .sub_btn {
+    width: 170px;
+  }
+
   .hero {
+    overflow: hidden;
+    position: relative;
     width: 100%;
     height: 300px;
     order: 1;
 
     & img {
-      
-      height: 100%;
+      position: absolute;
+      height: 250px;
     }
   }
 }

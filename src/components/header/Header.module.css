@@ -82,6 +82,10 @@
             color: hsl(230, 29%, 20%);
         }
 
+        & a:hover {
+            text-decoration: underline;
+        }
+
         & span {
             display: block;
             width: 300px;
@@ -94,7 +98,9 @@
 
 @media screen and (max-width: 768px) {
     .header {
+        width: 80%;
         position: relative;
+        margin: 0 auto;
     }
 
     .links {
